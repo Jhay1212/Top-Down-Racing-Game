@@ -6,10 +6,10 @@ const JUMP_VELOCITY = -400.0
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
-
+var health: int = 100
 
 func _ready():
-	var health:int = 100
+	pass
 
 
 func _physics_process(delta):
@@ -20,3 +20,7 @@ func _physics_process(delta):
 	position += direction * SPEED * delta
 	
 	move_and_slide()
+
+
+func _on_area_2d_body_shape_entered(body_rid, body, body_shape_index, local_shape_index):
+	health -= 10

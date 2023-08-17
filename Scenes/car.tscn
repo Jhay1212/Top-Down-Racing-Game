@@ -11,7 +11,7 @@
 script = ExtResource("1_u5arn")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(385, 311)
+position = Vector2(372, 296)
 scale = Vector2(0.31169, 0.277104)
 texture = ExtResource("1_r5o02")
 
@@ -24,3 +24,5 @@ shape = SubResource("RectangleShape2D_opgq7")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_imky5")
+
+[connection signal="body_shape_entered" from="Area2D" to="." method="_on_area_2d_body_shape_entered"]
